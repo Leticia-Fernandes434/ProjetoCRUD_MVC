@@ -1,10 +1,19 @@
 // CONFIGURAÇÃO FIREBASE REALTIME DATABASE
 const admin = require("firebase-admin");
+const path = require("path");
+const fs = require("fs");
 
-// Renomeie o arquivo serviceAccountKey-exemplo.json
-// para serviceAccountKey.json e coloque suas credenciais do Firebase.
+// Local: config/serviceAccountKey.json
+// Render: /etc/secrets/serviceAccountKey.json
+let serviceAccountPath;
 
-const serviceAccount = require("./serviceAccountKey.json");
+if (fs.existsSync(path.join(__dirname, "serviceAccountKey.json"))) {
+    serviceAccountPath = path.join(__dirname, "serviceAccountKey.json");
+} else {
+    serviceAccountPath = "/etc/secrets/serviceAccountKey.json";
+}
+
+const serviceAccount = require(serviceAccountPath);
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
