@@ -1,0 +1,33 @@
+{
+  "categorias": {
+    "1": {
+      "nome": "Eletrônicos"
+    },
+    "2": {
+      "nome": "Roupas"
+    },
+    "3": {
+      "nome": "Alimentos"
+    }
+  },
+  "fornecedores": {
+    "1": {
+      "nome": "Fornecedor A",
+      "cnpj": "12.345.678/0001-90"
+    },
+    "2": {
+      "nome": "Fornecedor B",
+      "cnpj": "98.765.432/0001-10"
+    }
+  },
+  "clientes": {
+    "1": {
+      "nome": "João Silva",
+      "email": "joao@email.com"
+    },
+    "2": {
+      "nome": "Maria Souza",
+      "email": "maria@email.com"
+    }
+  }
+}
